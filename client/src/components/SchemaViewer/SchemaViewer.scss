@@ -1,0 +1,112 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.schema-viewer {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-sm;
+  border: 1px solid #e2e8f0;
+  max-height: 400px;
+  overflow-y: auto;
+
+  @include respond-to(desktop) {
+    max-height: none;
+  }
+
+  &__heading {
+    font-size: $font-base;
+    margin-bottom: $spacing-md;
+    color: $text-primary;
+
+    @include respond-to(tablet) {
+      font-size: $font-lg;
+    }
+  }
+
+  &__loading,
+  &__empty {
+    color: $text-light;
+    font-size: $font-sm;
+    text-align: center;
+    padding: $spacing-lg;
+  }
+
+  &__table {
+    margin-bottom: $spacing-lg;
+    padding-bottom: $spacing-md;
+    border-bottom: 1px solid #f1f5f9;
+
+    &:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+    }
+  }
+
+  &__table-name {
+    font-family: $font-mono;
+    font-size: $font-base;
+    color: $primary;
+    margin-bottom: $spacing-sm;
+  }
+
+  &__label {
+    font-size: $font-sm;
+    font-weight: 600;
+    color: $text-secondary;
+    margin-bottom: $spacing-xs;
+  }
+
+  &__column-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-xs;
+    margin-bottom: $spacing-md;
+  }
+
+  &__column-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: $bg-body;
+    padding: 2px 8px;
+    border-radius: $radius-sm;
+    font-size: $font-sm;
+
+    code {
+      font-weight: 600;
+      background: none;
+      padding: 0;
+    }
+  }
+
+  &__data-type {
+    color: $text-light;
+    font-size: 0.75rem;
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  &__data-table {
+    font-size: $font-sm;
+    min-width: 300px;
+
+    th {
+      background: $bg-body;
+      padding: $spacing-xs $spacing-sm;
+      text-align: left;
+      font-weight: 600;
+      color: $text-secondary;
+      white-space: nowrap;
+    }
+
+    td {
+      padding: $spacing-xs $spacing-sm;
+      border-bottom: 1px solid #f1f5f9;
+      white-space: nowrap;
+    }
+  }
+}

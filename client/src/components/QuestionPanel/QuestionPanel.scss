@@ -1,0 +1,52 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.question-panel {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: $shadow-sm;
+  border: 1px solid #e2e8f0;
+
+  @include respond-to(tablet) {
+    padding: $spacing-lg;
+  }
+
+  &__header {
+    @include flex-between;
+    flex-wrap: wrap;
+    gap: $spacing-sm;
+    margin-bottom: $spacing-md;
+  }
+
+  &__title {
+    font-size: $font-lg;
+
+    @include respond-to(tablet) {
+      font-size: $font-2xl;
+    }
+  }
+
+  &__description {
+    font-size: $font-base;
+    color: $text-secondary;
+    line-height: 1.7;
+    margin-bottom: $spacing-md;
+  }
+
+  &__actions {
+    display: flex;
+    gap: $spacing-sm;
+  }
+
+  &__hint-btn {
+    @include btn-base;
+    background-color: $warning;
+    color: #fff;
+    padding: $spacing-sm $spacing-lg;
+
+    &:hover:not(:disabled) {
+      background-color: #e08e09;
+    }
+  }
+}

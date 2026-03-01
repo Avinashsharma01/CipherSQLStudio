@@ -1,0 +1,73 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.home {
+  min-height: 100vh;
+
+  &__main {
+    padding: $spacing-md;
+
+    @include respond-to(tablet) {
+      padding: $spacing-xl;
+    }
+  }
+
+  &__container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__intro {
+    margin-bottom: $spacing-xl;
+    text-align: center;
+
+    @include respond-to(tablet) {
+      text-align: left;
+    }
+  }
+
+  &__title {
+    font-size: $font-2xl;
+    margin-bottom: $spacing-xs;
+
+    @include respond-to(tablet) {
+      font-size: $font-3xl;
+    }
+  }
+
+  &__subtitle {
+    color: $text-secondary;
+    font-size: $font-base;
+    margin: 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-md;
+
+    @include respond-to(tablet) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(desktop) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__loading,
+  &__empty {
+    @include flex-center;
+    padding: $spacing-2xl;
+    color: $text-light;
+    font-size: $font-lg;
+  }
+
+  &__error {
+    background: $error-bg;
+    color: $error;
+    padding: $spacing-md;
+    border-radius: $radius-md;
+    text-align: center;
+  }
+}

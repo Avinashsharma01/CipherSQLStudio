@@ -1,0 +1,47 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.sql-editor {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-sm;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+
+  &__toolbar {
+    @include flex-between;
+    padding: $spacing-sm $spacing-md;
+    background: $secondary;
+  }
+
+  &__label {
+    color: $text-light;
+    font-size: $font-sm;
+    font-weight: 500;
+  }
+
+  &__run-btn {
+    @include btn-base;
+    background-color: $success;
+    color: #fff;
+    font-size: $font-sm;
+    padding: 6px $spacing-md;
+
+    &:hover:not(:disabled) {
+      background-color: #1da44e;
+    }
+  }
+
+  &__editor-container {
+    border-top: 1px solid #334155;
+  }
+
+  &__shortcut {
+    font-size: 0.75rem;
+    color: $text-light;
+    padding: $spacing-xs $spacing-md;
+    text-align: right;
+    background: #f8fafc;
+    margin: 0;
+  }
+}

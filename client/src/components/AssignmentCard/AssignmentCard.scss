@@ -1,0 +1,69 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.assignment-card {
+  background: $bg-white;
+  border-radius: $radius-lg;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  border: 1px solid #e2e8f0;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+  @include flex-column;
+  gap: $spacing-sm;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+    border-color: $primary;
+  }
+
+  &__header {
+    @include flex-between;
+  }
+
+  &__title {
+    font-size: $font-lg;
+    color: $text-primary;
+    margin-top: $spacing-xs;
+
+    @include respond-to(tablet) {
+      font-size: $font-xl;
+    }
+  }
+
+  &__description {
+    font-size: $font-sm;
+    color: $text-secondary;
+    line-height: 1.5;
+    // clamp to 3 lines
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  &__footer {
+    @include flex-between;
+    margin-top: auto;
+    padding-top: $spacing-sm;
+    border-top: 1px solid #f1f5f9;
+  }
+
+  &__tables {
+    font-size: $font-sm;
+    color: $text-light;
+    font-family: $font-mono;
+  }
+
+  &__arrow {
+    font-size: $font-xl;
+    color: $primary;
+    transition: transform $transition-fast;
+  }
+
+  &:hover &__arrow {
+    transform: translateX(4px);
+  }
+}

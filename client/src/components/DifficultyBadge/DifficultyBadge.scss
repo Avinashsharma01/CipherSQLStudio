@@ -1,0 +1,26 @@
+@import '../../styles/variables';
+
+.difficulty-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: $font-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+
+  &--easy {
+    background-color: $success-bg;
+    color: $success;
+  }
+
+  &--medium {
+    background-color: $warning-bg;
+    color: $warning;
+  }
+
+  &--hard {
+    background-color: $error-bg;
+    color: $error;
+  }
+}
